@@ -29,7 +29,7 @@ public class Adtoniq {
 	private boolean pollForUpdates = false;
 	
 	private String javaScript = "";
-	private String version = "Java 1.0.0";
+	private String version = "Java 1.0.1";
 	
 	public static Adtoniq singleton = null;
 
