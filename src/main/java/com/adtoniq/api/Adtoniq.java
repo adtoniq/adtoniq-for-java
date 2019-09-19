@@ -104,7 +104,7 @@ public class Adtoniq {
 	 * @return The code that should be inserted into the body section
 	 */
 	public String getBodyCode() {
-		return "<iframe id='aq-ch' src='//static-42andpark-com.s3.amazonaws.com/html/danaton3.html' width='1' height='1' style='width:1px;height:1px;position:absolute;left:-1000;' frameborder=0></iframe>";
+		return "";
 	}
 
 	private static String getQueryArg(HttpServletRequest request, String argName) {
