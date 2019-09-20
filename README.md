@@ -16,7 +16,7 @@ The src/main/java/com/adtoniq/api folder contains the Java source to implement t
 
 ## How to integrate this with your Java web server ##
 
-There are two lines you should insert into your JSP pages that show ads: one to inject content into your <head> section, and the other to inject content into your <body> section. Adtoniq will inject JavaScript and a style sheet into your <head>. Currently Adtoniq does not inject content into your <body> so if you omitted this line everything would still work, but the next generation of Adtoniq (due out in early 2020) will require content to be injected into the <body> section, so you can prepare yourself for the future by adding this line of code now and then seemlessly transition to the next generation of Adtoniq.
+There are two lines you should insert into your JSP pages that show ads: one to inject content into your `<head>` section, and the other to inject content into your `<body>` section. Adtoniq will inject JavaScript and a style sheet into your `<head>`. Currently Adtoniq does not inject content into your `<body>` so if you omitted this line everything would still work, but the next generation of Adtoniq (due out in early 2020) will require content to be injected into the `<body>` section, so you can prepare yourself for the future by adding this line of code now and then seemlessly transition to the next generation of Adtoniq.
 
 You will also need to provide your API key. An easy way to do this is to edit the AdtoniqLauncher.java file to include your API key on the line that looks like this:
 
