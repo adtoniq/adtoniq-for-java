@@ -22,7 +22,7 @@ There are two lines you should insert into your JSP pages that show ads: one to 
 
 You will also need to provide your API key. An easy way to do this is to edit the AdtoniqLauncher.java file to include your API key on the line that looks like this:
 
-	    adtoniq.setApiKey("put-your-adtoniq-cloud-key-here");
+	    	public final static Adtoniq adtoniq = new Adtoniq("put-your-adtoniq-api-key-here") {
 
 Just keep in mind that if Adtoniq updates this git repository, you'll need to merge this change in again.
 

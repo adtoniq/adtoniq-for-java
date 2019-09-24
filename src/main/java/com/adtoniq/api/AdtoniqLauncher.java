@@ -10,7 +10,7 @@ public class AdtoniqLauncher {
 	/** This singleton points to the single instance of adtoniq. Customize this code here to set
 	 * your API key.
 	 */
-	public final static Adtoniq adtoniq = new Adtoniq("1716ef08-65db-4f55-83a9-d2c624c1475a") {
+	public final static Adtoniq adtoniq = new Adtoniq("put-your-adtoniq-api-key-here") {
 		
 		/** When Adtoniq JavaScript is updated, your pages will contain the new script inline within
 		 *  the head section of your pages. If you need to update your page cache or CDN when Adtoniq updates its JavaScript,
