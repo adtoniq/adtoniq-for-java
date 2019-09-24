@@ -46,8 +46,7 @@ public class Adtoniq implements IAdtoniq {
 	}
 
 	private void getLatestJavaScript(String nonce) {
-//		String ret = executePost("https://integration.adtoniq.com/api/v1/", "operation=update&apiKey="+apiKey+"&version="+version+"&nonce="+nonce);
-		String ret = executePost("https://david-dev.adtoniq.com/api/v1/", "operation=update&apiKey="+apiKey+"&version="+version+"&nonce="+nonce);
+		String ret = executePost("https://integration.adtoniq.com/api/v1/", "operation=update&apiKey="+apiKey+"&version="+version+"&nonce="+nonce);
 		if (ret.length() > 0) {
 			javaScript = ret;
 			updatePageCache();
