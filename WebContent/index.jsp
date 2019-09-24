@@ -21,16 +21,12 @@
 	<!-- These three divs will have their display style set to 'block' based on whether or not an ad blocker has been detected -->
 	<div>
 		<div class="adtoniq_adblocked" style="display: none; color: red;">
-			<img src="//tech.adtoniq.com/wp-content/uploads/2016/11/Stop.png" alt="Stop" width="300" height="300" />
-			<h1 style="text-align: center;">You are using an ad blocker with acceptable ads disabled!!!!</h1>
+			<img src="//static-42andpark-com.s3-us-west-2.amazonaws.com/images/stop.png" alt="Stop" width="300" height="300" />
+			<h1 style="text-align: center;">You are using an ad blocker!!!!</h1>
 		</div>
 		<div class="adtoniq_nonblocked" style="display: none; color: green;">
-			<img src="//tech.adtoniq.com/wp-content/uploads/2016/11/Go.png" alt="Stop" width="300" height="300" />
+			<img src="//static-42andpark-com.s3-us-west-2.amazonaws.com/images/go.png" alt="Stop" width="300" height="300" />
 			<h1 style="text-align: center;">You are not using an ad blocker</h1>
-		</div>
-		<div class="adtoniq_acceptable" style="display: none; color: yellow;">
-			<img src="//tech.adtoniq.com/wp-content/uploads/2016/11/Acceptable-Ads.png" alt="Stop" width="300" height="300" />
-			<h1 style="text-align: center;">You are using an ad blocker with acceptable ads enabled</h1>
 		</div>
 	</div>
 </body>
