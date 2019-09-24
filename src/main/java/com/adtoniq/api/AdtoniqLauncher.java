@@ -7,16 +7,19 @@ package com.adtoniq.api;
  *
  */
 public class AdtoniqLauncher {
-	/** This points to the single instance of adtoniq. Customize this class here to set
-	 * your API key and fully qualified domain name of the front end of your website.
-	 * If you are using Adtoniq for Google Analytics, add your GA Id as well, or omit
-	 * that line of code.
+	/** This singleton points to the single instance of adtoniq. Customize this code here to set
+	 * your API key.
 	 */
-	public final static Adtoniq adtoniq = new Adtoniq();
-	
-	static {
-	    adtoniq.setApiKey("put-your-adtoniq-cloud-key-here");
-	    adtoniq.setGoogleAnalyticsId("UA-XXXXXXXX-X");	// Optional - use if you are using Adtoniq for Google Analoytics features
-	    adtoniq.getLatestJavaScript();	// Must call this once to fetch latest JavaScript definitions
-	}
+	public final static Adtoniq adtoniq = new Adtoniq("1716ef08-65db-4f55-83a9-d2c624c1475a") {
+		
+		/** When Adtoniq JavaScript is updated, your pages will contain the new script inline within
+		 *  the head section of your pages. If you need to update your page cache or CDN when Adtoniq updates its JavaScript,
+		 *  implement that code here. If your cache automatically updates itself when your page
+		 *  content changes, you don't need to implement anything here. 
+		 */
+		@Override
+		public void updatePageCache() {
+			
+		}
+	};
 }

@@ -9,46 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
 
-public class Adtoniq {
+public class Adtoniq implements IAdtoniq {
 	// Set the apiKey to the API Key you receive from Adtoniq.
 	private String apiKey = "";
 	
-	// Set the Google Analytics property Id if you want to use Adtoniq for Google Analytics
-	private String googleAnalyticsId = "";
-	
-	// Set the Google Analytics traffic split
-	private String gaTrafficSplit = "100";
-	
-	// Enable adtoniq for Google Analytics
-	private String gaEnabled = "true";
-	
-	// Set the Google AdSense Id if you want to use Adtoniq for AdSense
-	private String adSenseId = "";
-
-	// Set pollForUpdates to true to 
-	private boolean pollForUpdates = false;
-	
 	private String javaScript = "";
-	private String version = "Java 1.0.1";
+	private String version = "Java 1.0.2";
 	
 	public static Adtoniq singleton = null;
 
 	/** Construct the Adtoniq singleton and initialize it
 	 * @param apiKey Your unique API key, obtained from Adtoniq when you register
-	 * @param fqdn The fully qualified domain of the front end of your website
 	 */
 	public Adtoniq(String apiKey) {
 		this.apiKey = apiKey;
 		singleton = this;
 		getLatestJavaScript();
-	}
-	
-	public Adtoniq() {
-		singleton = this;
-	}
-
-	public void register() {
-		
 	}
 	
 	public void processRequest(HttpServletRequest request) {
@@ -58,12 +34,21 @@ public class Adtoniq {
 		if (adtoniqAPIKey.equals(apiKey) && adtoniqNonce.length() > 0)
 			getLatestJavaScript(adtoniqNonce);
 	}
+	
+	
+	/** By default, do nothing to update page caches. Override this method to
+	 *  manually update your cache / CDN when the JavaScript is updated.
+	 */
+	public void updatePageCache() {
+		
+	}
 
 	private void getLatestJavaScript(String nonce) {
 		String ret = executePost("https://integration.adtoniq.com/api/v1/", "operation=update&apiKey="+apiKey+"&version="+version+"&nonce="+nonce);
-		if (ret.length() > 0)
+		if (ret.length() > 0) {
 			javaScript = ret;
-		else
+			updatePageCache();
+		} else
 			System.err.println("Error initializing Adtoniq for Java.");
 	}
 
@@ -81,9 +66,6 @@ public class Adtoniq {
 
 	public String getJavaScript() {
 	    String ret = javaScript;
-	    if (googleAnalyticsId.length() > 0) {
-		ret += "<script>if (adtoniq && adtoniq.setGA) adtoniq.setGA('" + googleAnalyticsId + "','" + gaTrafficSplit + "','" + gaEnabled + "');</script>";
-	    }
 	    return ret;
 	}
 
@@ -153,27 +135,4 @@ public class Adtoniq {
 		}
 	}
 
-	public boolean isPollForUpdates() {
-		return pollForUpdates;
-	}
-
-	public void setPollForUpdates(boolean pollForUpdates) {
-		this.pollForUpdates = pollForUpdates;
-	}
-
-	public String getGoogleAnalyticsId() {
-	    return googleAnalyticsId;
-	}
-
-	public void setGoogleAnalyticsId(String googleAnalyticsId) {
-	    this.googleAnalyticsId = googleAnalyticsId;
-	}
-
-	public String getAdSenseId() {
-	    return adSenseId;
-	}
-
-	public void setAdSenseId(String adSenseId) {
-	    this.adSenseId = adSenseId;
-	}
 }

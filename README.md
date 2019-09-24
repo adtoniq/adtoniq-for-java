@@ -4,9 +4,11 @@ This is an Eclipse project with maven nature to build a web server demonstrating
 
 Adtoniq for Java implements the server-to-server communications required between your webserver and Adtoniq. Once a day Adtoniq will initiate communications with your webserver, using a secure protocol, to transmit the latest JavaScript required to ensure Adtoniq continues functioning as new ad block rules are added, or ad blockers are enhanced with new capabilities. In addition, once you are live with Adtoniq, Adtoniq will monitor your website to determine if ad blockers are adding new filter list rules specifically to block ads on your website, and if they are, Adtoniq will immediately send your site an update to ensure your advertising is not blocked. These updates sent by Adtoniq are cached between updates from Adtoniq - you can read more about caching below.
 
-The JavaScript is cached in a static global, so that it can quickly be injected into the <head> section of your site.
-
 By default, Adtoniq's servers will communicate with your website using the root of your website over https, for example https://www.mysite.com/. You can customize this URL to be any URL you like, for example https://www.mysite.com/adtoniq. To customize your update URL, contact adtoniq at support@adtoniq.com and request a custom update URL.
+
+## Caching and CDNs ##
+
+The JavaScript is stored in a static global, so that it can quickly be injected into the <head> section of your site. If you cache your HTML, for example in a CDN, you'll need to ensure that your cache is eventually updated. Some caches are updated automatically whenever page content changes, while other caches must be updated manually. 
 
 ## Guide to what's here ##
 
