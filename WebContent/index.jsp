@@ -15,10 +15,7 @@
 	</style>
 </head>
 <body>
-	<!-- This is the second place to integrate Adtoniq, to inject content into the body section -->
-	<%=AdtoniqLauncher.adtoniq.getBodyCode()%>
-	
-	<!-- These three divs will have their display style set to 'block' based on whether or not an ad blocker has been detected -->
+	<!-- These two divs will have their display style set to 'block' based on whether or not an ad blocker has been detected -->
 	<div>
 		<div class="adtoniq_adblocked" style="display: none; color: red;">
 			<img src="//static-42andpark-com.s3-us-west-2.amazonaws.com/images/stop.png" alt="Stop" width="300" height="300" />
