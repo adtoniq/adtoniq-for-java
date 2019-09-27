@@ -22,7 +22,7 @@
 	<title>JavaScript API Example</title>
 </head>
 <body>
-<p>The following script on this page shows how to use two of the Adtoniq API functions:</p>
+<p>The following script on this page shows how to use this Adtoniq API function:</p>
 <p>
  <pre>
     <code>
