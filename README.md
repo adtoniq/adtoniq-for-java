@@ -14,9 +14,11 @@ In most cases, the previous version of JavaScript will continue to function for 
 
 ## Guide to what's here ##
 
-The WebContent folder contains a sample index.jsp file, demonstrating how to integrate Adtoniq for Java with a JSP page. This sample page tells you whether or not you are using an ad blocker. 
+The WebContent folder contains a sample index.jsp file, demonstrating how to integrate Adtoniq for Java with a JSP page. This sample page tells you whether or not you are using an ad blocker.
 
 The src/main/java/com/adtoniq/api folder contains the Java source to implement the server-to-server communications with Adtoniq servers.
+
+You can find a FreeMarker example using helloworld.ftl as a sample HTML file, and FreeMarkerExample showing how to inject the Adtoniq JavaScript into the head section.
 
 ## How to integrate this with your Java web server ##
 

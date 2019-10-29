@@ -36,6 +36,12 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Only for demonstrating how to use with Freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
 	</dependencies>
 	<distributionManagement>
 		<snapshotRepository>
