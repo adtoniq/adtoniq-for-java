@@ -9,6 +9,8 @@ By default, Adtoniq's servers will communicate with your website using the root 
 ## Caching and CDNs ##
 
 The JavaScript is stored in a static global, so that it can quickly be injected into the <head> section of your site. If you cache your HTML, for example in a CDN, you'll need to ensure that your cache is eventually updated. Some caches are updated automatically whenever page content changes, while other caches must be updated manually. You can override updatePageCache() function to add code to manually update your cache.
+	
+If your website runs on a set of two or more load-balanced servers, you'll need to ensure that all your servers get the update. One way to do this is to store the Adtoniq JavaScript in a persistent store that is shared among the multiple servers. For example, in Adtoniq for WordPress, the JavaScript is stored in a database. It could also be stored in a shared file location.
 
 In most cases, the previous version of JavaScript will continue to function for however long it takes to update your cache / CDN, even if that takes many hours. 
 
